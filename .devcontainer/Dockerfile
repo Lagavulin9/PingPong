@@ -29,6 +29,14 @@ RUN cmake -S capicxx-core-runtime -B capicxx-core-runtime/build
 WORKDIR /root/capicxx-core-runtime/build
 RUN make && make install
 
+# CommonAPI-SomeIP
+WORKDIR /root
+RUN git clone --branch 3.2.0 https://github.com/COVESA/capicxx-someip-runtime.git capicxx-someip-runtime
+RUN mkdir -p capicxx-someip-runtime/build
+RUN cmake -S capicxx-someip-runtime -B capicxx-someip-runtime/build
+WORKDIR /root/capicxx-someip-runtime/build
+RUN make && make install
+
 # Generator
 WORKDIR /root
 RUN wget https://github.com/COVESA/capicxx-core-tools/releases/download/3.2.0.1/commonapi_core_generator.zip \
