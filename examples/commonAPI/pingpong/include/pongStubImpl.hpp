@@ -12,5 +12,5 @@ public:
 	PongStubImpl();
 	virtual ~PongStubImpl();
 
-	void handlePing(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _ping, pingMeReply_t _reply);
+	virtual void pingMe(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _ping, pingMeReply_t _reply);
 };
