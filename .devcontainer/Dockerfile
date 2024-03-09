@@ -5,35 +5,34 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y \
 	git \
 	wget \
-	libboost-all-dev \
-	asciidoc \
-	source-highlight \
-	doxygen \
-	graphviz \
+	unzip \
+	libboost-system-dev \
+	libboost-thread-dev \
+	libboost-filesystem-dev \
 	build-essential \
 	cmake
 
 # vSomeIP
 WORKDIR /root
-RUN git clone https://github.com/COVESA/vsomeip.git vsomeip
-RUN mkdir -p vsomeip/build
-RUN cmake -S vsomeip -B vsomeip/build
+RUN git clone https://github.com/COVESA/vsomeip.git vsomeip \
+	&& mkdir -p vsomeip/build \
+	&& cmake -S vsomeip -B vsomeip/build
 WORKDIR /root/vsomeip/build
 RUN make && make install
 
 # CommonAPI
 WORKDIR /root
-RUN git clone --branch 3.2.0 https://github.com/COVESA/capicxx-core-runtime.git capicxx-core-runtime
-RUN mkdir -p capicxx-core-runtime/build
-RUN cmake -S capicxx-core-runtime -B capicxx-core-runtime/build
+RUN git clone --branch 3.2.0 https://github.com/COVESA/capicxx-core-runtime.git capicxx-core-runtime \
+	&& mkdir -p capicxx-core-runtime/build \
+	&& cmake -S capicxx-core-runtime -B capicxx-core-runtime/build
 WORKDIR /root/capicxx-core-runtime/build
 RUN make && make install
 
 # CommonAPI-SomeIP
 WORKDIR /root
-RUN git clone --branch 3.2.0 https://github.com/COVESA/capicxx-someip-runtime.git capicxx-someip-runtime
-RUN mkdir -p capicxx-someip-runtime/build
-RUN cmake -S capicxx-someip-runtime -B capicxx-someip-runtime/build
+RUN git clone --branch 3.2.0 https://github.com/COVESA/capicxx-someip-runtime.git capicxx-someip-runtime \
+	&& mkdir -p capicxx-someip-runtime/build \
+	&& cmake -S capicxx-someip-runtime -B capicxx-someip-runtime/build
 WORKDIR /root/capicxx-someip-runtime/build
 RUN make && make install
 
@@ -49,7 +48,9 @@ FROM ubuntu:22.04
 
 RUN apt update && apt install -y \
 	git \
-	libboost-all-dev \
+	libboost-system-dev \
+	libboost-thread-dev \
+	libboost-filesystem-dev \
 	build-essential \
 	cmake \
 	default-jre
