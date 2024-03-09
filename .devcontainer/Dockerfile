@@ -41,7 +41,7 @@ FROM ubuntu:22.04
 
 RUN apt update && apt install -y \
 	git \
-	vim \
+	libboost-all-dev \
 	build-essential \
 	cmake \
 	default-jre
