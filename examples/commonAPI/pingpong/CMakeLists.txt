@@ -30,3 +30,15 @@ add_executable(pong
 	src/pongStubImpl.cpp
 )
 target_link_libraries(pong CommonAPI)
+
+set(INTERFACE "someip/v${MAJOR_VERSION}/${APP_PACKAGE_NAME}")
+add_library(PongStub SHARED
+  src-gen/${INTERFACE}/PongSomeIPDeployment.cpp
+  src-gen/${INTERFACE}/PongSomeIPStubAdapter.cpp
+)
+target_link_libraries(PongStub CommonAPI-SomeIP)
+
+add_library(PongProxy SHARED
+  src-gen/${INTERFACE}/PongSomeIPProxy.cpp
+)
+target_link_libraries(PongProxy CommonAPI-SomeIP)

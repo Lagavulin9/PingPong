@@ -1,5 +1,6 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include "pongStubImpl.hpp"
+#include <thread>
 
 int main()
 {
@@ -7,7 +8,7 @@ int main()
 
 	std::string domain = "local";
 	std::string instance = "pingpong.Pong";
-	std::string connection = "ping-pong"
+	std::string connection = "ping-pong";
 
 	std::shared_ptr<PongStubImpl> pongService = std::make_shared<PongStubImpl>();
 	while (!runtime->registerService(domain, instance, pongService, connection))
