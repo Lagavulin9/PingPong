@@ -20,10 +20,10 @@ include_directories(
   ${COMMONAPI_SOMEIP_INCLUDE_DIRS}
 )
 
-# add_executable(ping
-# 	src/ping.cpp
-# )
-# target_link_libraries(ping CommonAPI)
+add_executable(ping
+	src/ping.cpp
+)
+target_link_libraries(ping CommonAPI)
 
 add_executable(pong
 	src/pong.cpp
@@ -39,6 +39,7 @@ add_library(PongStub SHARED
 target_link_libraries(PongStub CommonAPI-SomeIP)
 
 add_library(PongProxy SHARED
+  src-gen/${INTERFACE}/PongSomeIPDeployment.cpp
   src-gen/${INTERFACE}/PongSomeIPProxy.cpp
 )
 target_link_libraries(PongProxy CommonAPI-SomeIP)
