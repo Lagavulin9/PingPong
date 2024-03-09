@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -std=c++14 -rdynamic CMakeFiles/pong.dir/src/pong.cpp.o -o pong  -Wl,-rpath,/usr/local/lib /usr/local/lib/libvsomeip3.so.3.4.10 

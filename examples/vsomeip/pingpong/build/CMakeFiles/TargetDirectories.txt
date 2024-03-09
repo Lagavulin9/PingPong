@@ -1,4 +1,0 @@
-/workspaces/pingpong/examples/vsomeip/pingpong/build/CMakeFiles/ping.dir
-/workspaces/pingpong/examples/vsomeip/pingpong/build/CMakeFiles/pong.dir
-/workspaces/pingpong/examples/vsomeip/pingpong/build/CMakeFiles/edit_cache.dir
-/workspaces/pingpong/examples/vsomeip/pingpong/build/CMakeFiles/rebuild_cache.dir
