@@ -1,5 +1,6 @@
 echo "#######################################################"
 echo "### Checking container creation                     ###"
 echo "#######################################################"
-useradd vscode --password vscode -m
+useradd vscode -m
+echo 'vscode:vscode' | chpasswd
 usermod -aG sudo vscode
