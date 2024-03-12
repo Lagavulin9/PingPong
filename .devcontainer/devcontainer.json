@@ -19,7 +19,10 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.cpptools-extension-pack",
 				"ms-azuretools.vscode-docker"
-			]
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
 		}
 	},
 	"onCreateCommand": "bash .devcontainer/scripts/onCreate.sh",
