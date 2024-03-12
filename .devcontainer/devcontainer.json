@@ -21,9 +21,9 @@
 				"ms-azuretools.vscode-docker"
 			]
 		}
-	}
-	// "onCreateCommand": ".devcontainer/scripts/onCreateCommand.sh",
-	// "postStartCommand": ".devcontainer/scripts/postStartCommand.sh"
+	},
+	"onCreateCommand": "bash .devcontainer/scripts/onCreate.sh",
+	"postStartCommand": "bash .devcontainer/scripts/postStart.sh",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	"remoteUser": "vscode",
 }
