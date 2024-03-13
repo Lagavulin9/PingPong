@@ -2,6 +2,7 @@
 useradd vscode -m
 echo 'vscode:vscode' | chpasswd
 usermod -aG sudo vscode
+chown vscode:vscode /workspace
 
 # Create a symbolic link for .ini
 if [ -f "conf/commonapi.ini" ]; then
