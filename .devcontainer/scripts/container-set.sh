@@ -1,6 +1,3 @@
-echo "#######################################################"
-echo "### Checking container creation                     ###"
-echo "#######################################################"
 # Create remote user
 useradd vscode -m
 echo 'vscode:vscode' | chpasswd
