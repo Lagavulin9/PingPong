@@ -1,4 +1,4 @@
-FROM lagavulin16/commonapi:dev
+FROM lagavulin16/vsomeip:dev
 
 RUN apt install -y sudo
 
