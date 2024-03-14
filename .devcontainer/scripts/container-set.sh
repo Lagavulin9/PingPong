@@ -2,4 +2,3 @@
 useradd vscode -m
 echo 'vscode:vscode' | chpasswd
 usermod -aG sudo vscode
-chown vscode:vscode /workspace
