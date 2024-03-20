@@ -25,7 +25,12 @@ jobs:
       name: Checkout repository
 
     - name: Configure CMake
-      run: cmake -S . -B build
+      run: cmake -S ${{ github.workspace }} -B build
 
-    - name : Build
+    - name: Build
       run: cmake --build build/
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: build_artifact
+        path: ${{ github.workspace }}/build
