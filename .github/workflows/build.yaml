@@ -1,0 +1,18 @@
+name: CMake Build
+
+on: [push, pull request]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container: lagavulin16/vsomeip:dev
+
+    steps:
+    - uses: actions/checkout@v3
+      name: Checkout repository
+
+    - name: Configure CMake
+      run: cmake -S . -B build
+
+    - name : Build
+      run: cmake --build build/
