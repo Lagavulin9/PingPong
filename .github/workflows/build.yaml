@@ -1,5 +1,9 @@
 name: CMake Build
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [ main ]
@@ -29,8 +33,3 @@ jobs:
 
     - name: Build
       run: cmake --build build/
-
-    - uses: actions/upload-artifact@v4
-      with:
-        name: build_artifact
-        path: ./build
