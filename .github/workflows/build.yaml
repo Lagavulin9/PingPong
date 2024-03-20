@@ -21,11 +21,11 @@ jobs:
     container: lagavulin16/vsomeip:dev
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       name: Checkout repository
 
     - name: Configure CMake
-      run: cmake -S ${{ github.workspace }} -B build
+      run: cmake -S . -B build
 
     - name: Build
       run: cmake --build build/
@@ -33,4 +33,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: build_artifact
-        path: ${{ github.workspace }}/build
+        path: ./build
